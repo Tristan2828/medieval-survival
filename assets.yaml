@@ -41,7 +41,7 @@ assets:
   - {id: grave_robber, kind: sprite, source: claude, status: todo, file: art/grave_robber.png, size: [9, 11], frames: {idle: 1, walk: 2}, notes: 'a sneaky thief in a grey hood and brown clothes, carrying a sack of loot over the shoulder'}
 
   # --- Bosses (drawn at 2x) ---
-  - {id: bone_warden, kind: sprite, source: claude, status: todo, file: art/bone_warden.png, size: [24, 24], frames: {idle: 1, attack: 1}, notes: 'a boss: armored skeleton lord, bone skull with horns, red eye sockets, dark armored body'}
+  - {id: bone_warden, kind: sprite, source: claude, status: draft, file: art/bone_warden.png, size: [24, 24], frames: {idle: 1, attack: 1}, notes: 'a boss: armored skeleton lord, bone skull with horns, red eye sockets, dark armored body'}
   - {id: mire_hag, kind: sprite, source: claude, status: todo, file: art/mire_hag.png, size: [24, 24], frames: {idle: 1, attack: 1}, notes: 'a boss: swamp witch, tall black pointed hat, pale green face, mossy hair and mossy cloak'}
   - {id: ashen_bishop, kind: sprite, source: claude, status: todo, file: art/ashen_bishop.png, size: [24, 24], frames: {idle: 1, attack: 1}, notes: 'a boss: burnt priest, tall red mitre with a gold cross, ashen bone face, white robe with gold trim'}
 

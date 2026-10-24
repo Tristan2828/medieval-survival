@@ -48,6 +48,7 @@ func test_mourners_bell_doubles_revive_speed_and_is_co_op_only() -> void:
 # --- In a real arena (solo host + a second player) ---
 
 func _start_arena() -> void:
+	RunSetup.config = RunConfig.new()  # defaults, whatever earlier tests left (no bonus level-ups)
 	Net.start_solo()
 	_arena = ARENA_SCENE.instantiate()
 	add_child_autofree(_arena)

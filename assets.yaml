@@ -1,6 +1,6 @@
 # GameTest asset manifest (gamekit). One entry per asset; check it with `gamekit validate`.
 # What each asset should look or sound like: docs/ART_BRIEF.md and docs/AUDIO_BRIEF.md (the briefs
-# decide; keep this file in step with them). Built from the code: src/art/pixel_art.gd (158 art
+# decide; keep this file in step with them). Built from the code: src/art/pixel_art.gd (160 art
 # assets), Sfx (26 sounds) and Tracks.ALL (9 tracks). Sizes and frames are what the game uses now.
 # Not listed (the art brief says not needed): the 6 retired upgrade icons. Floors, bullets, rings, UI panels, particles and the font are drawn by code.
 # Field reference: gamekit's templates/assets.yaml.
@@ -24,7 +24,7 @@ music:                  # `gamekit music render` runs this Godot script to turn 
 
 assets:
   # --- Heroes (P/p areas = player color, recolored per player) ---
-  - {id: wanderer, kind: sprite, source: claude, status: todo, file: art/wanderer.png, size: [12, 14], frames: {idle: 1, walk: 2}, notes: 'upgraded from the old text sprite but not final (owner, 2026-10-12)'}
+  - {id: wanderer, kind: sprite, source: claude, status: draft, file: art/wanderer.png, size: [12, 14], frames: {idle: 1, walk: 2}, notes: 'upgraded from the old text sprite but not final (owner, 2026-10-12)'}
   - {id: gravekeeper, kind: sprite, source: claude, status: draft, file: art/gravekeeper.png, size: [14, 16], frames: {idle: 1, walk: 2}, notes: 'upgraded from the old text sprite but not final (owner, 2026-10-12)'}
   - {id: hexblade_witch, kind: sprite, source: claude, status: draft, file: art/hexblade_witch.png, size: [12, 16], frames: {idle: 1, walk: 2}, notes: 'upgraded from the old text sprite but not final (owner, 2026-10-12)'}
   - {id: necromancer, kind: sprite, source: claude, status: draft, file: art/necromancer.png, size: [12, 16], frames: {idle: 1, walk: 2}, notes: 'upgraded from the old text sprite but not final (owner, 2026-10-12)'}
@@ -202,31 +202,31 @@ assets:
   - {id: rubble, kind: sprite, source: claude, status: todo, file: art/rubble.png, size: [5, 3]}
 
   # --- Sound effects (synthesized by Sfx today) ---
-  - {id: sfx_shoot, kind: sfx, source: sfxr, status: todo, file: audio/sfx/shoot.wav, replaces: shoot}
+  - {id: sfx_shoot, kind: sfx, source: sfxr, status: keep, file: audio/sfx/shoot.wav, replaces: shoot}
   - {id: sfx_scythe, kind: sfx, source: library, status: done, file: audio/sfx/scythe.wav, replaces: scythe, license: {name: CC0 1.0, author: Kenney (www.kenney.nl), url: 'https://kenney.nl/assets/rpg-audio'}, notes: 'Kenney rpg-audio: knifeSlice2, cut to 0.25 s; loudness matched to the synth sound'}
   - {id: sfx_zap, kind: sfx, source: library, status: done, file: audio/sfx/zap.wav, replaces: zap, license: {name: CC0 1.0, author: Kenney (www.kenney.nl), url: 'https://kenney.nl/assets/sci-fi-sounds'}, notes: 'Kenney sci-fi-sounds: laserSmall_001, cut to 0.12 s; loudness matched to the synth sound'}
-  - {id: sfx_spear, kind: sfx, source: sfxr, status: todo, file: audio/sfx/spear.wav, replaces: spear, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_spear, kind: sfx, source: sfxr, status: keep, file: audio/sfx/spear.wav, replaces: spear, notes: 'owner keeps the synth sound (2026-10-12)'}
   - {id: sfx_hit, kind: sfx, source: library, status: done, file: audio/sfx/hit.wav, replaces: hit, license: {name: CC0 1.0, author: Kenney (www.kenney.nl), url: 'https://kenney.nl/assets/impact-sounds'}, notes: 'Kenney impact-sounds: impactGeneric_light_001; loudness matched to the synth sound'}
-  - {id: sfx_death, kind: sfx, source: sfxr, status: todo, file: audio/sfx/death.wav, replaces: death, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_death, kind: sfx, source: sfxr, status: keep, file: audio/sfx/death.wav, replaces: death, notes: 'owner keeps the synth sound (2026-10-12)'}
   - {id: sfx_enemy_shot, kind: sfx, source: library, status: done, file: audio/sfx/enemy_shot.wav, replaces: enemy_shot, license: {name: CC0 1.0, author: Kenney (www.kenney.nl), url: 'https://kenney.nl/assets/sci-fi-sounds'}, notes: 'Kenney sci-fi-sounds: laserSmall_004, cut to 0.12 s; loudness matched to the synth sound'}
-  - {id: sfx_gem, kind: sfx, source: sfxr, status: todo, file: audio/sfx/gem.wav, replaces: gem, notes: 'owner keeps the synth sound (2026-10-12)'}
-  - {id: sfx_hurt, kind: sfx, source: sfxr, status: todo, file: audio/sfx/hurt.wav, replaces: hurt, notes: 'owner keeps the synth sound (2026-10-12)'}
-  - {id: sfx_bomb, kind: sfx, source: sfxr, status: todo, file: audio/sfx/bomb.wav, replaces: bomb, notes: 'owner keeps the synth sound (2026-10-12)'}
-  - {id: sfx_hex, kind: sfx, source: sfxr, status: todo, file: audio/sfx/hex.wav, replaces: hex, notes: 'owner keeps the synth sound (2026-10-12)'}
-  - {id: sfx_effigy, kind: sfx, source: sfxr, status: todo, file: audio/sfx/effigy.wav, replaces: effigy, notes: 'owner keeps the synth sound (2026-10-12)'}
-  - {id: sfx_coin, kind: sfx, source: sfxr, status: todo, file: audio/sfx/coin.wav, replaces: coin}
+  - {id: sfx_gem, kind: sfx, source: sfxr, status: keep, file: audio/sfx/gem.wav, replaces: gem, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_hurt, kind: sfx, source: sfxr, status: keep, file: audio/sfx/hurt.wav, replaces: hurt, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_bomb, kind: sfx, source: sfxr, status: keep, file: audio/sfx/bomb.wav, replaces: bomb, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_hex, kind: sfx, source: sfxr, status: keep, file: audio/sfx/hex.wav, replaces: hex, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_effigy, kind: sfx, source: sfxr, status: keep, file: audio/sfx/effigy.wav, replaces: effigy, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_coin, kind: sfx, source: sfxr, status: keep, file: audio/sfx/coin.wav, replaces: coin}
   - {id: sfx_pickup, kind: sfx, source: library, status: done, file: audio/sfx/pickup.wav, replaces: pickup, license: {name: CC0 1.0, author: Kenney (www.kenney.nl), url: 'https://kenney.nl/assets/digital-audio'}, notes: 'Kenney digital-audio: powerUp7; loudness matched to the synth sound'}
-  - {id: sfx_chest, kind: sfx, source: sfxr, status: todo, file: audio/sfx/chest.wav, replaces: chest, notes: 'owner keeps the synth sound (2026-10-12)'}
-  - {id: sfx_level_up, kind: sfx, source: sfxr, status: todo, file: audio/sfx/level_up.wav, replaces: level_up, notes: 'owner keeps the synth sound (2026-10-12)'}
-  - {id: sfx_quest, kind: sfx, source: sfxr, status: todo, file: audio/sfx/quest.wav, replaces: quest, notes: 'owner keeps the synth sound (2026-10-12)'}
-  - {id: sfx_event, kind: sfx, source: sfxr, status: todo, file: audio/sfx/event.wav, replaces: event, notes: 'owner keeps the synth sound after two rounds of Kenney picks (2026-10-12)'}
-  - {id: sfx_boss, kind: sfx, source: sfxr, status: todo, file: audio/sfx/boss.wav, replaces: boss, notes: 'owner keeps the synth sound after two rounds of Kenney picks (2026-10-12)'}
-  - {id: sfx_downed, kind: sfx, source: sfxr, status: todo, file: audio/sfx/downed.wav, replaces: downed, notes: 'owner keeps the synth sound after two rounds of Kenney picks (2026-10-12)'}
+  - {id: sfx_chest, kind: sfx, source: sfxr, status: keep, file: audio/sfx/chest.wav, replaces: chest, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_level_up, kind: sfx, source: sfxr, status: keep, file: audio/sfx/level_up.wav, replaces: level_up, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_quest, kind: sfx, source: sfxr, status: keep, file: audio/sfx/quest.wav, replaces: quest, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_event, kind: sfx, source: sfxr, status: keep, file: audio/sfx/event.wav, replaces: event, notes: 'owner keeps the synth sound after two rounds of Kenney picks (2026-10-12)'}
+  - {id: sfx_boss, kind: sfx, source: sfxr, status: keep, file: audio/sfx/boss.wav, replaces: boss, notes: 'owner keeps the synth sound after two rounds of Kenney picks (2026-10-12)'}
+  - {id: sfx_downed, kind: sfx, source: sfxr, status: keep, file: audio/sfx/downed.wav, replaces: downed, notes: 'owner keeps the synth sound after two rounds of Kenney picks (2026-10-12)'}
   - {id: sfx_revive, kind: sfx, source: library, status: done, file: audio/sfx/revive.wav, replaces: revive, license: {name: CC0 1.0, author: Kenney (www.kenney.nl), url: 'https://kenney.nl/assets/interface-sounds'}, notes: 'Kenney interface-sounds: confirmation_004; loudness matched to the synth sound'}
-  - {id: sfx_countdown, kind: sfx, source: sfxr, status: todo, file: audio/sfx/countdown.wav, replaces: countdown}
-  - {id: sfx_countdown_go, kind: sfx, source: sfxr, status: todo, file: audio/sfx/countdown_go.wav, replaces: countdown_go}
-  - {id: sfx_victory, kind: sfx, source: sfxr, status: todo, file: audio/sfx/victory.wav, replaces: victory, notes: 'owner keeps the synth sound (2026-10-12)'}
-  - {id: sfx_defeat, kind: sfx, source: sfxr, status: todo, file: audio/sfx/defeat.wav, replaces: defeat, notes: 'owner keeps the synth sound after two rounds of Kenney picks (2026-10-12)'}
+  - {id: sfx_countdown, kind: sfx, source: sfxr, status: keep, file: audio/sfx/countdown.wav, replaces: countdown}
+  - {id: sfx_countdown_go, kind: sfx, source: sfxr, status: keep, file: audio/sfx/countdown_go.wav, replaces: countdown_go}
+  - {id: sfx_victory, kind: sfx, source: sfxr, status: keep, file: audio/sfx/victory.wav, replaces: victory, notes: 'owner keeps the synth sound (2026-10-12)'}
+  - {id: sfx_defeat, kind: sfx, source: sfxr, status: keep, file: audio/sfx/defeat.wav, replaces: defeat, notes: 'owner keeps the synth sound after two rounds of Kenney picks (2026-10-12)'}
   - {id: sfx_ui, kind: sfx, source: library, status: done, file: audio/sfx/ui.wav, replaces: ui, license: {name: CC0 1.0, author: Kenney (www.kenney.nl), url: 'https://kenney.nl/assets/interface-sounds'}, notes: 'Kenney interface-sounds: select_002 (second round pick); loudness matched to the synth sound'}
 
   # --- Music: classic soundtrack, then metal (Tracks.ALL; menu is classic only) ---

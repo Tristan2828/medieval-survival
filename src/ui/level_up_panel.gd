@@ -26,6 +26,8 @@ const FILLER_FRAME: Color = Color(0.6, 0.57, 0.68)
 const CARD_MIN_HEIGHT: float = 112.0
 ## Lines' offsets inside a card (top + bottom), see hud.tscn.
 const CARD_PADDING: float = 14.0
+## Frames _fit_cards waits for the wrapped labels to be laid out.
+const FIT_FRAMES: int = 2
 
 var _offered: Array[int] = []
 var _pips: Array[LevelPips] = []
@@ -40,6 +42,9 @@ var _picked_style: StyleBox = null
 var _picked: int = -1
 static var _screenshot_taken: bool = false
 static var _picked_screenshot_taken: bool = false
+## Frames left before _fit_cards measures the cards, and the tree it counts on.
+var _fit_frames_left: int = 0
+var _fit_tree: SceneTree = null
 
 
 ## Shows these cards. `player` (this machine's, may be null) fills in each card's
@@ -137,13 +142,28 @@ func _clear_picked_look(button: Button) -> void:
 
 ## Every card as tall as the tallest one's text needs (never shorter than
 ## CARD_MIN_HEIGHT). Wrapped labels only know their height once laid out at the
-## card's width, hence the frame waits.
+## card's width, hence the wait of FIT_FRAMES frames. It counts frames through a
+## signal connection rather than `await`: a panel freed while waiting (the run
+## ended) then simply never measures, instead of Godot reporting a resumed
+## function whose instance is gone.
 func _fit_cards() -> void:
 	var buttons := _cards.get_children()
 	for button: Node in buttons:
 		(button as Button).custom_minimum_size.y = CARD_MIN_HEIGHT
-	await get_tree().process_frame
-	await get_tree().process_frame
+	_fit_frames_left = FIT_FRAMES
+	_fit_tree = get_tree()
+	if not _fit_tree.process_frame.is_connected(_on_fit_frame):
+		_fit_tree.process_frame.connect(_on_fit_frame)
+
+
+func _on_fit_frame() -> void:
+	_fit_frames_left -= 1
+	if _fit_frames_left > 0:
+		return
+	_fit_tree.process_frame.disconnect(_on_fit_frame)
+	if not is_inside_tree():
+		return
+	var buttons := _cards.get_children()
 	var tallest := CARD_MIN_HEIGHT
 	for button: Node in buttons:
 		var card := button as Button

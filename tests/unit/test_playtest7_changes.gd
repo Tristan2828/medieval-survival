@@ -10,6 +10,12 @@ const HUD_SCENE: PackedScene = preload("res://src/ui/hud.tscn")
 const DELTA: float = 1.0 / 60.0
 
 
+func after_each() -> void:
+	# The lobby tests below load this PC's saved custom game into the shared
+	# RunSetup.config; reset it so later test files' arenas start from the defaults.
+	RunSetup.config = RunConfig.new()
+
+
 # --- Boss fights -----------------------------------------------------------------
 
 func test_the_boss_sweeps_the_old_horde_and_brings_its_own() -> void:

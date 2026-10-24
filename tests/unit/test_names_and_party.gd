@@ -17,6 +17,9 @@ func before_each() -> void:
 
 func after_each() -> void:
 	Settings.player_name = _saved_name
+	# A host lobby loads this PC's saved custom game (RunConfig.load_saved) into the
+	# shared RunSetup.config; later test files' arenas must not start with it.
+	RunSetup.config = RunConfig.new()
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(HeroUnlocks.path))
 	HeroUnlocks.path = HeroUnlocks.PATH
 
